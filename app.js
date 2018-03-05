@@ -4,7 +4,12 @@ const favicon = require('serve-favicon');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 
+mongoose.connect('mongodb://localhost/learn-app', {
+})
+  .then(() => console.log('mongodb connected...'))
+  .catch(err => console.log(err));
 
 const index = require('./routes/index');
 const users = require('./routes/users');
